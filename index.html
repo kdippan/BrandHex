@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BrandHex | Enterprise Logo Detection</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="nav-brand">Brand<span>Hex</span></div>
+        <div class="nav-links">
+            <a href="index.html" class="active">Extractor</a>
+            <a href="developer.html">Developer</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Extract Brand Assets <span class="gradient-text">Instantly</span></h1>
+            <p>Enterprise-grade logo detection. Get high-res logos, dimensions, and exact color palettes from any public website.</p>
+        </header>
+
+        <form id="extractForm" class="search-bar">
+            <input type="url" id="urlInput" placeholder="Enter website URL (e.g., https://github.com)" required>
+            <button type="submit">Scan Brand</button>
+        </form>
+
+        <div id="loader" class="status-msg">
+            <div class="spinner"></div> Scanning target website...
+        </div>
+        <div id="error" class="status-msg error-msg"></div>
+
+        <div id="resultCard" class="result-card">
+            <div class="image-showcase">
+                <img id="logoImg" src="" alt="Extracted Logo">
+            </div>
+            <div class="data-panel">
+                <h3>Asset Intelligence</h3>
+                <div class="data-grid">
+                    <div class="data-item">
+                        <label>Format</label>
+                        <span id="metaFormat">-</span>
+                    </div>
+                    <div class="data-item">
+                        <label>Size</label>
+                        <span id="metaSize">-</span>
+                    </div>
+                    <div class="data-item">
+                        <label>Dimensions</label>
+                        <span id="metaDimensions">-</span>
+                    </div>
+                    <div class="data-item">
+                        <label>Source URL</label>
+                        <a id="metaSource" href="#" target="_blank">View Original ↗</a>
+                    </div>
+                </div>
+                
+                <div class="palette-section">
+                    <label>Detected Color Palette (Click to copy)</label>
+                    <div id="colorSwatches" class="swatch-container"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="toast" class="toast">Copied to clipboard!</div>
+    <script src="script.js"></script>
+</body>
+</html>
